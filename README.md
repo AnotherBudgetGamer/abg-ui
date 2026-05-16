@@ -24,9 +24,7 @@ This project is intentionally simple and is meant to be easy to build, inspect, 
 - [Installing on Linux / WSL](#installing-on-linux--wsl)
 - [Testing Install](#testing-install)
 - [Using ABG UI in Other Projects](#using-abg-ui-in-other-projects)
-- [Linker Flag](#linker-flag)
-- [Example Usage](#example-usage)
-- [Cleaning Build Files](#cleaning-build-files)
+- [Linker Flags](#linker-flag)
 - [Notes](#notes)
 
 ---
@@ -46,13 +44,12 @@ abg-ui/
 ```
 
 ## Important Folders
-```
+
 | Folder     | Purpose                |
 | :--------- | :--------------------- |
 | `include/` | Public header files    |
 | `src/`     | C source files         |
 | `build/`   | Generated build output |
-```
 
 ## Headers
 The public header for this library is:
@@ -87,9 +84,9 @@ libabg_ui.a
 ```
 Default output:
 ```
-build/abg_ui.a
+build/libabg_ui.a
 ```
-Theh static library contains the compiled object files:
+The static library contains the compiled object files:
 ```
 build/abg_ui.o
 ```
@@ -157,7 +154,7 @@ From project root:
 ```Bash
 sudo make install
 ```
-This copies the puclib header to:
+This copies the public header to:
 ```
 usr/local/include/
 ```
@@ -168,7 +165,7 @@ usr/local/lib
 Installed files:
 ```
 /usr/local/include/abg_ui.h
-/usr/local/include/abg_ui.a
+/usr/local/lib/libabg_ui.a
 ```
 To uninstall:
 ```
@@ -177,7 +174,7 @@ sudo make uninstall
 This removes:
 ```
 /usr/local/include/abg_ui.h
-/usr/local/include/abg_ui.a
+/usr/local/lib/libabg_ui.a
 ```
 
 ## Testing Install
@@ -274,7 +271,7 @@ Compile:
 ```Bash
 gcc main.c -labg_ui -lraylib -o main
 ```
-## Linker Flas
+## Linker Flags
 The linker flag for this library is:
 ```Bash
 -labg_ui
